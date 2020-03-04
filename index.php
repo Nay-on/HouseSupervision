@@ -68,7 +68,7 @@
 			<?php while($a = $pc->fetch()) { ?>
 			<div class="centre">
 				<div class="card" style="width: 18rem;">
-					<img src="https://image.shutterstock.com/z/stock-vector-computer-display-isolated-in-realistic-design-on-white-background-modern-flat-screen-computer-1562695522.jpg" class="card-img-top" alt="">
+					<img src="images/pc.png" class="card-img-top" alt="">
 					<div class="card-body">
 						<h5 class="card-title"><?php echo $a['name'] ?></h5>
 						<p class="card-text"><?php echo $a['ip'] ?></p>
