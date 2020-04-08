@@ -4,10 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
+	
     <title>House Supervision</title>
 	
 	<?php
@@ -17,94 +20,29 @@
 	
   </head>
   <body>
-    <h1>House Supervision</h1>
+
+	<!-- DEBUT DU MENU -->
+
+	<?php
+		include('include/head.php');
+		include('include/menu.php');
+	?>
 	
-		<!-- Button trigger modal -->
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-	  Add Computer
-	</button>
+	<div class="menu">
+		<ul class="nav flex-column">
+			<li class="nav-item" style="font-size: 36px;">
+				<a class="nav-link active" href="#"><i class="fas fa-house-user"></i></a>
+			</li> 
+			<li class="nav-item" style="font-size: 36px;">
+				<a class="nav-link" href="#"><i class="fas fa-laptop-house"></i></a>
+			</li>
+			<li class="nav-item" style="font-size: 36px;">
+				<a class="nav-link" href="#"><i class="fas fa-cogs"></i></a>
+			</li>
+		</ul>
+	</div>
 
-	<!-- Modal -->
-
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog" role="document">
-			<div class="modal-content">
-			  <div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Add Computer</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				</button>
-			  </div>
-			  <div class="modal-body">
-				
-				<!-- Add computer form -->
-				
-				<form action="addcomputer.php" method="post">
-				<p>
-					<label for="ip">IP : </label>
-					<input type="text" name="ip" id="ip">
-				</p>
-								<p>
-					<label for="ip">Name : </label>
-					<input type="text" name="name" id="name">
-				</p>
-				
-				</div>
-			  <div class="modal-footer">
-				<input class="btn btn-primary" type="submit" value="Submit" >
-				</form>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	</br></br>
-
-		<!-- pc list -->
-		
-					<span class="a"></br>
-					<!--
-			<ul>-->
-			<?php while($a = $pc->fetch()) { ?>
-			<div class="centre">
-				<div class="card" style="width: 18rem;">
-					<img src="images/pc.png" class="card-img-top" alt="">
-					<div class="card-body">
-						<h5 class="card-title"><?php echo $a['name'] ?></h5>
-						<p class="card-text"><?php echo $a['ip'] ?></p>
-						<div class="btn-group">
-						  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Actions
-						  </button>
-						  <div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Turn On</a>
-							<a class="dropdown-item" href="#">Turn Off</a>
-							<a class="dropdown-item" href="#">ETA</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="removeComputer.php?rm=<?php echo $a['id'] ?>">Remove <?php echo $a['name'] ?></a>
-							
-						  </div>
-						</div>
-					</div>
-				</div>			
-			</div>
-				<!--
-				<li>
-					<a href="article.php?id=<?= $a['id'] ?>"><?= $a['titre'] ?></a>
-					
-				<?php
-					session_start();
-					error_reporting(0);
-					if($_SESSION['username'] != ""){ ?>
-					  | <a href="principale.php?edit=<?= $a['id'] ?>">Modifier</a> | <a onclick="test()" href="supprimer.php?id=<?= $a['id'] ?>">Supprimer</a>
-				<?php }
-				?>
-				</li>
-				-->
-				<?php } ?>
-			<!--<ul>-->
-			
-			</span>
+	<!-- FIN DU MENU -->
 	
     <!-- Optional JavaScript -->
 	

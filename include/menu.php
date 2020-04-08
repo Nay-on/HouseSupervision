@@ -1,0 +1,20 @@
+	<!-- DEBUT DU MENU -->
+
+	<div class="header" id="myHeader">
+		<h2>House Supervision</h2>
+	</div>
+	<div class="menu">
+		<ul class="nav flex-column">
+			<li class="nav-item" style="font-size: 36px;">
+				<a class="nav-link active" href="#"><i class="fas fa-house-user"></i></a>
+			</li> 
+			<li class="nav-item" style="font-size: 36px;">
+				<a class="nav-link" href="#"><i class="fas fa-laptop-house"></i></a>
+			</li>
+			<li class="nav-item" style="font-size: 36px;">
+				<a class="nav-link" href="#"><i class="fas fa-cogs"></i></a>
+			</li>
+		</ul>
+	</div>
+
+	<!-- FIN DU MENU -->
