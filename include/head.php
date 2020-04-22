@@ -8,11 +8,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/login.css">
 	
 	<?php
 		$bdd = new PDO("mysql:host=localhost;dbname=house_super", "root", "");
 		$pc = $bdd->query('SELECT * FROM pc_list ORDER BY id DESC');
+		$comp = $bdd->query('SELECT * FROM component ORDER BY name DESC');
 	?>
 
   </head>

@@ -61,24 +61,52 @@
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Add Computer</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Add Component</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				  <span aria-hidden="true">&times;</span>
 				</button>
 			  </div>
 			  <div class="modal-body">
 				
-				<!-- Add computer form -->
+				<!-- Add component form -->
 				
 				<form action="addcomponent.php" method="post">
 					<p>
-						<label for="ip">Name : </label>
+						<label for="ip">Name : </label><br />
 						<input type="text" name="name" id="name">
 					</p>
+					<label for="ip">type : </label><br />
+					<select name="type" class="form-control">
+						<option>Lamp</option>
+						<option>Outlet</option>
+						<option>Other</option>
+					</select><br />
+					
 					<p>
-						<label for="ip">IFTTT Link : </label>
-						<input type="text" name="linkcp" id="linkcp">
+						<label for="ip">Action 1 name : </label><br />
+						<input type="text" name="action1" id="action1"><br />
+						<label for="ip">Action 1 IFTTT Link : </label><br />
+						<input type="text" name="linkcp" id="linkcp"><br />
 					</p>
+					<p>
+						<label for="ip">Action 2 name : </label><br />
+						<input type="text" name="action2" id="action2"><br />
+						<label for="ip">Action 3 IFTTT Link : </label><br />
+						<input type="text" name="linkcp2" id="linkcp2"><br />
+					</p>
+					<p>
+						<label for="ip">Action 3 name : </label><br />
+						<input type="text" name="action3" id="action3"><br />
+						<label for="ip">Action 3 IFTTT Link : </label><br />
+						<input type="text" name="linkcp3" id="linkcp3"><br />
+					</p>
+					<p>
+						<label for="ip">Action 4 name : </label><br />
+						<input type="text" name="action4" id="action4"><br />
+						<label for="ip">Action 4 IFTTT Link : </label><br />
+						<input type="text" name="linkcp4" id="linkcp4"><br />
+					</p>
+					
 				
 				</div>
 			  <div class="modal-footer">
@@ -88,10 +116,7 @@
 			  </div>
 			</div>
 		  </div>
-		</div>
-		
-		<!---->
-		
+		</div>		
 	</br></br>
 	
 	
@@ -99,50 +124,66 @@
 		<!-- pc list -->
 		
 			<span class="a"></br>
-					<!--
-			<ul>-->
-			<div class="sepleft">
-				<?php while($a = $pc->fetch()) { ?>
-				<div class="centre">
-					<div class="card" style="width: 18rem;">
-						<i class="fas fa-desktop fa-7x"></i>
-						<!--<img src="images/pc.png" class="card-img-top" alt="">-->
-						<div class="card-body">
-							<h5 class="card-title"><?php echo $a['name'] ?></h5>
-							<p class="card-text"><?php echo $a['ip'] ?></p>
-							<div class="btn-group">
-							  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Actions
-							  </button>
-							  <div class="dropdown-menu">
-								<a class="dropdown-item" href="#">Turn On</a>
-								<a class="dropdown-item" href="#">Turn Off</a>
-								<a class="dropdown-item" href="#">ETA</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="removeComputer.php?rm=<?php echo $a['id'] ?>">Remove <?php echo $a['name'] ?></a>
-								
-							  </div>
+				<div class="sepleft">
+					<?php while($a = $pc->fetch()) { ?>
+					<div class="centre">
+						<div class="card" style="width: 18rem;">
+							<i class="fas fa-desktop fa-7x"></i>
+							<!--<img src="images/pc.png" class="card-img-top" alt="">-->
+							<div class="card-body">
+								<h5 class="card-title"><?php echo $a['name'] ?></h5>
+								<p class="card-text"><?php echo $a['ip'] ?></p>
+								<div class="btn-group">
+								  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Actions
+								  </button>
+								  <div class="dropdown-menu">
+									<a class="dropdown-item" href="#">Turn On</a>
+									<a class="dropdown-item" href="#">Turn Off</a>
+									<a class="dropdown-item" href="#">ETA</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="removeComputer.php?rm=<?php echo $a['id'] ?>">Remove <?php echo $a['name'] ?></a>
+									
+								  </div>
+								</div>
 							</div>
-						</div>
-					</div>			
+						</div>			
+					</div>
+					<?php } ?>
 				</div>
-				<!--
-				<li>
-					<a href="article.php?id=<?= $a['id'] ?>"><?= $a['titre'] ?></a>
-						
-				<?php
-					session_start();
-					error_reporting(0);
-					if($_SESSION['username'] != ""){ ?>
-					  | <a href="principale.php?edit=<?= $a['id'] ?>">Modifier</a> | <a onclick="test()" href="supprimer.php?id=<?= $a['id'] ?>">Supprimer</a>
-				<?php }
-				?>
-				</li>
-				-->
-				<?php } ?>
-			</div>
-			<!--<ul>-->
+			</span>
 			
+			<!-- Component -->
+			
+			<span class="a"></br>
+				<div class="sepleft">
+					<?php while($b = $comp->fetch()) { ?>
+					<div class="centre">
+						<div class="card" style="width: 18rem;">
+							<i class="fas fa-desktop fa-7x"></i>
+							<!--<img src="images/pc.png" class="card-img-top" alt="">-->
+							<div class="card-body">
+								<h5 class="card-title"><?php echo $b['name'] ?></h5>
+								<p class="card-text"><?php echo $b['type'] ?></p>
+								<div class="btn-group">
+								  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Actions
+								  </button>
+								  <div class="dropdown-menu">
+									<a class="dropdown-item" href="#"><?php echo $b['nameAction1'] ?></a>
+									<a class="dropdown-item" href="#"><?php echo $b['nameAction2'] ?></a>
+									<a class="dropdown-item" href="#"><?php echo $b['nameAction3'] ?></a>
+									<a class="dropdown-item" href="#"><?php echo $b['nameAction4'] ?></a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
+									
+								  </div>
+								</div>
+							</div>
+						</div>			
+					</div>
+					<?php } ?>
+				</div>
 			</span>
 	
     <!-- Optional JavaScript -->

@@ -12,7 +12,7 @@ if($link === false){
 $id = $_GET['rm'];
  
 // Attempt insert query execution
-$sql = "DELETE FROM pc_list WHERE id = '$id'";
+$sql = "DELETE FROM component WHERE id = '$id'";
 if(mysqli_query($link, $sql)){
     echo "Records removed successfully.";
 } else{

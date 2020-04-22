@@ -23,6 +23,6 @@ if(mysqli_query($link, $sql)){
 // Close connection
 mysqli_close($link);
 
-header('Location: index.php');
+header('Location: app.php');
 
 ?>
