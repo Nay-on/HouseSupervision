@@ -10,7 +10,7 @@
 				<a class="nav-link active" href="#"><i class="fas fa-house-user"></i></a>
 			</li> 
 			<li class="nav-item" style="font-size: 36px;">
-				<a class="nav-link" href="#"><i class="fas fa-laptop-house"></i></a>
+				<a class="nav-link" href="app.php"><i class="fas fa-laptop-house"></i></a>
 			</li>
 			<li class="nav-item" style="font-size: 36px;">
 				<a class="nav-link" href="#"><i class="fas fa-cogs"></i></a>
