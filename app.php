@@ -128,6 +128,7 @@
 					<?php while($a = $pc->fetch()) { ?>
 					<div class="centre">
 						<div class="card" style="width: 18rem;">
+							<br />
 							<i class="fas fa-desktop fa-7x"></i>
 							<!--<img src="images/pc.png" class="card-img-top" alt="">-->
 							<div class="card-body">
@@ -160,7 +161,20 @@
 					<?php while($b = $comp->fetch()) { ?>
 					<div class="centre">
 						<div class="card" style="width: 18rem;">
-							<i class="fas fa-desktop fa-7x"></i>
+							<br />
+							<?php 
+							switch ($b['type']) {
+								case 'Lamp':
+									?><i class="fas fa-lightbulb fa-7x"></i><?php
+									break;
+								case 'Outlet':
+									 ?><i class="fas fa-plug fa-7x"></i><?php
+									break;
+								case 'Other':
+									?><i class="fas fa-network-wired fa-7x"></i><?php
+									break;
+							}
+							?>
 							<!--<img src="images/pc.png" class="card-img-top" alt="">-->
 							<div class="card-body">
 								<h5 class="card-title"><?php echo $b['name'] ?></h5>
@@ -170,10 +184,58 @@
 									Actions
 								  </button>
 								  <div class="dropdown-menu">
-									<a class="dropdown-item" href="#"><?php echo $b['nameAction1'] ?></a>
-									<a class="dropdown-item" href="#"><?php echo $b['nameAction2'] ?></a>
-									<a class="dropdown-item" href="#"><?php echo $b['nameAction3'] ?></a>
-									<a class="dropdown-item" href="#"><?php echo $b['nameAction4'] ?></a>
+									<!-- link1 -->
+									<?php  if($b['nameAction1'] != ''){ ?>
+									<a class="dropdown-item" href="
+										<?php
+										$curl = curl_init();
+										curl_setopt($curl, CURLOPT_URL, $b['link']);
+										curl_setopt($curl, CURLOPT_COOKIESESSION, true);
+										curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+										$return = curl_exec($curl);
+										curl_close($curl);
+										?>
+									"><?php echo $b['nameAction1'] ?></a>
+									<?php } ?>
+									<!-- link2 -->
+									<?php  if($b['nameAction2'] != ''){ ?>
+									<a class="dropdown-item" href="
+										<?php
+										$curl = curl_init();
+										curl_setopt($curl, CURLOPT_URL, $b['link2']);
+										curl_setopt($curl, CURLOPT_COOKIESESSION, true);
+										curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+										$return = curl_exec($curl);
+										curl_close($curl);
+										?>
+									"><?php echo $b['nameAction2'] ?></a>
+									<?php } ?>
+									<!-- link3 -->
+									<?php  if($b['nameAction3'] != ''){ ?>
+									<a class="dropdown-item" href="
+										<?php
+										$curl = curl_init();
+										curl_setopt($curl, CURLOPT_URL, $b['link3']);
+										curl_setopt($curl, CURLOPT_COOKIESESSION, true);
+										curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+										$return = curl_exec($curl);
+										curl_close($curl);
+										?>
+									"><?php echo $b['nameAction3'] ?></a>
+									<?php } ?>
+									<!-- link4 -->
+									<?php  if($b['nameAction4'] != ''){ ?>
+									<a class="dropdown-item" href="
+										<?php
+										$curl = curl_init();
+										curl_setopt($curl, CURLOPT_URL, $b['link4']);
+										curl_setopt($curl, CURLOPT_COOKIESESSION, true);
+										curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+										$return = curl_exec($curl);
+										curl_close($curl);
+										?>
+									"><?php echo $b['nameAction4'] ?></a>
+									<?php } ?>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
 									
