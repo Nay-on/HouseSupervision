@@ -19,6 +19,11 @@
 		Add Component
 		</button>
 		
+		<?php
+			if($_SESSION['username'] !== ""){
+				header("location:index.php");
+			}
+		?>
 
 	<!-- Modal -->
 
@@ -77,7 +82,7 @@
 					</p>
 					<label for="ip">type : </label><br />
 					<select name="type" class="form-control">
-						<option>Lamp</option>
+						<option>Lightbulb</option>
 						<option>Outlet</option>
 						<option>Other</option>
 					</select><br />
@@ -164,7 +169,7 @@
 							<br />
 							<?php 
 							switch ($b['type']) {
-								case 'Lamp':
+								case 'Lightbulb':
 									?><i class="fas fa-lightbulb fa-7x"></i><?php
 									break;
 								case 'Outlet':
