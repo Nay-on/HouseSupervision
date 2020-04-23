@@ -20,7 +20,9 @@
 		</button>
 		
 		<?php
-			if($_SESSION['username'] !== ""){
+			session_start();
+			error_reporting(0);
+			if($_SESSION['username'] == ""){
 				header("location:index.php");
 			}
 		?>

@@ -48,8 +48,6 @@
     <!-- Optional JavaScript -->
 	<script>
 		function init() {
-			$('#login').modal('show');
-			
 		<?php
 			if(isset($_GET['erreur'])){
 			$err = $_GET['erreur'];
@@ -57,6 +55,10 @@
 			?>
 			$('#login').modal('show');
 			<?php }
+			
+			if($_SESSION['username'] == ""){
+				?> $('#login').modal('show'); <?php
+			}
 		?>
 			
 		}
