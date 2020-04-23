@@ -48,7 +48,7 @@
     <!-- Optional JavaScript -->
 	<script>
 		function init() {
-			//$('#login').modal('show');
+			$('#login').modal('show');
 			
 		<?php
 			if(isset($_GET['erreur'])){
