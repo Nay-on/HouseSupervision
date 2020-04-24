@@ -10,9 +10,9 @@
 	<link rel="stylesheet" href="css/style.css">
 	
 	<?php
-		include('include/dbconnect.php');
-		$pc = $db->query('SELECT * FROM pc_list ORDER BY id DESC');
-		$comp = $db->query('SELECT * FROM component ORDER BY name DESC');
+		include('dbconnect.php');
+		$pc = $bdd->query('SELECT * FROM pc_list ORDER BY id DESC');
+		$comp = $bdd->query('SELECT * FROM component ORDER BY name DESC');
 	?>
 
   </head>
