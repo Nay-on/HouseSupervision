@@ -18,7 +18,6 @@
 			<li class="nav-item" style="font-size: 36px;">
 				<a class="nav-link" href="index.php?deconnexion=true"><i class="fas fa-power-off"></i></a>
 			</li>
-			
 		</ul>
 	</div>
 

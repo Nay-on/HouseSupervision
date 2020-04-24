@@ -1,27 +1,25 @@
 <?php
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "house_super");
+include('include/dbconnect.php');
  
 // Check connection
-if($link === false){
+if($db === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
  
 // Escape user inputs for security
-$ip = mysqli_real_escape_string($link, $_REQUEST['ip']);
-$name = mysqli_real_escape_string($link, $_REQUEST['name']);
+$ip = mysqli_real_escape_string($db, $_REQUEST['ip']);
+$name = mysqli_real_escape_string($db, $_REQUEST['name']);
  
 // Attempt insert query execution
 $sql = "INSERT INTO pc_list (ip, name) VALUES ('$ip', '$name')";
-if(mysqli_query($link, $sql)){
+if(mysqli_query($db, $sql)){
     echo "Records added successfully.";
 } else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);
 }
  
 // Close connection
-mysqli_close($link);
+mysqli_close($db);
 
 header('Location: app.php');
 
