@@ -10,6 +10,71 @@
 		include('include/menu.php');
 		?>
 	
+		<!-- Alert -->
+	
+					<span class="a"></br>
+				<div class="sepleft">
+					<?php while($alert = $comp2->fetch()) { ?>
+					<?php
+						$idcompoAlert = $alert['id'];
+						if($alert['action1state'] == 1){
+							$sql = "UPDATE component SET action1state = 0 WHERE id = $idcompoAlert";
+							if(mysqli_query($db, $sql)){
+								?>
+								<div class="alert alert-success alert-dismissible" role="alert">
+									<strong>Action <?php echo $alert['nameAction1'] ?> has been launch!</strong>
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<?php
+							}
+						}
+						if($alert['action2state'] == 1){
+							$sql = "UPDATE component SET action2state = 0 WHERE id = $idcompoAlert";
+							if(mysqli_query($db, $sql)){
+								?>
+								<div class="alert alert-success alert-dismissible">
+									<strong>Action <?php echo $alert['nameAction2'] ?> has been launch!</strong>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<?php
+							}
+						}
+						if($alert['action3state'] == 1){
+							$sql = "UPDATE component SET action3state = 0 WHERE id = $idcompoAlert";
+							if(mysqli_query($db, $sql)){
+								?>
+								<div class="alert alert-success alert-dismissible">
+									<strong>Action <?php echo $alert['nameAction3'] ?> has been launch!</strong>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<?php
+							}
+						}
+						if($alert['action4state'] == 1){
+							$sql = "UPDATE component SET action4state = 0 WHERE id = $idcompoAlert";
+							if(mysqli_query($db, $sql)){
+								?>
+								<div class="alert alert-success alert-dismissible">
+									<strong>Action <?php echo $alert['nameAction4'] ?> has been launch!</strong>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<?php
+							}
+						}
+						
+					?>
+					<?php } ?>
+				</div>
+			</span>
+			
 		<!-- Button trigger modal -->
 		</br>
 		<button type="button" class="btn btn-primary sepleft" data-toggle="modal" data-target="#exampleModal">
@@ -193,19 +258,19 @@
 								  <div class="dropdown-menu">
 									<!-- link1 -->
 									<?php  if($b['nameAction1'] != ''){ ?>
-									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link'] ?>"><?php echo $b['nameAction1'] ?></a>
+									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link'] ?>&id=<?php echo $b['id'] ?>&action=1"><?php echo $b['nameAction1'] ?></a>
 									<?php } ?>
 									<!-- link2 -->
 									<?php  if($b['nameAction2'] != ''){ ?>
-									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link2'] ?>"><?php echo $b['nameAction2'] ?></a>
+									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link2'] ?>&id=<?php echo $b['id'] ?>&action=2"><?php echo $b['nameAction2'] ?></a>
 									<?php } ?>
 									<!-- link3 -->
 									<?php  if($b['nameAction3'] != ''){ ?>
-									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link3'] ?>"><?php echo $b['nameAction3'] ?></a>
+									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link3'] ?>&id=<?php echo $b['id'] ?>&action=3"><?php echo $b['nameAction3'] ?></a>
 									<?php } ?>
 									<!-- link4 -->
 									<?php  if($b['nameAction4'] != ''){ ?>
-									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link4'] ?>"><?php echo $b['nameAction4'] ?></a>
+									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link4'] ?>&id=<?php echo $b['id'] ?>&action=4"><?php echo $b['nameAction4'] ?></a>
 									<?php } ?>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
