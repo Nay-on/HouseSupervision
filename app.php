@@ -12,7 +12,7 @@
 	
 		<!-- Alert -->
 	
-					<span class="a"></br>
+					<span class="a"><br />
 				<div class="sepleft">
 					<?php while($alert = $comp2->fetch()) { ?>
 					<?php
@@ -126,7 +126,7 @@
 			</div>
 		  </div>
 		</div>
-	</br></br>
+	<br /><br />
 	
 	
 		<div class="modal fade" id="moddalComponent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -190,8 +190,6 @@
 		  </div>
 		</div>		
 	</br></br>
-	
-	
 
 		<!-- pc list -->
 		
@@ -202,7 +200,6 @@
 						<div class="card" style="width: 18rem;">
 							<br />
 							<i class="fas fa-desktop fa-7x"></i>
-							<!--<img src="images/pc.png" class="card-img-top" alt="">-->
 							<div class="card-body">
 								<h5 class="card-title"><?php echo $a['name'] ?></h5>
 								<p class="card-text"><?php echo $a['ip'] ?></p>
@@ -223,6 +220,20 @@
 						</div>			
 					</div>
 					<?php } ?>
+					<div class="centre">
+						<div class="add">
+							<div class="card" style="width: 18rem;">
+								<br />
+								<a data-toggle="modal" data-toggle="modal" data-target="#exampleModal">
+									<i class="fas fa-plus fa-7x" style="opacity: 0.50;padding:51px;"></i>
+								</a>
+								<div class="card-body">
+									<h5 class="card-title"></h5>
+									<p class="card-text"></p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</span>
 			
@@ -230,6 +241,7 @@
 			
 			<span class="a"></br>
 				<div class="sepleft">
+
 					<?php while($b = $comp->fetch()) { ?>
 					<div class="centre">
 						<div class="card" style="width: 18rem;">
@@ -247,7 +259,6 @@
 									break;
 							}
 							?>
-							<!--<img src="images/pc.png" class="card-img-top" alt="">-->
 							<div class="card-body">
 								<h5 class="card-title"><?php echo $b['name'] ?></h5>
 								<p class="card-text"><?php echo $b['type'] ?></p>
@@ -274,13 +285,26 @@
 									<?php } ?>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
-									
 								  </div>
 								</div>
 							</div>
-						</div>			
+						</div>
 					</div>
 					<?php } ?>
+					<div class="centre">
+						<div class="add">
+							<div class="card" style="width: 18rem;">
+								<br />
+								<a data-toggle="modal" data-target="#moddalComponent">
+									<i class="fas fa-plus fa-7x" style="opacity: 0.50;padding:51px;"></i>
+								</a>
+								<div class="card-body">
+									<h5 class="card-title"></h5>
+									<p class="card-text"></p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</span>
 	

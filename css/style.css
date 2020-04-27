@@ -48,4 +48,9 @@
   color: #74b9ff;
 }
 
+.add a:hover{
+	opacity: 0.65;
+	cursor: pointer;
+}
+
 
