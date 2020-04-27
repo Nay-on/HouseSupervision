@@ -193,55 +193,19 @@
 								  <div class="dropdown-menu">
 									<!-- link1 -->
 									<?php  if($b['nameAction1'] != ''){ ?>
-									<a class="dropdown-item" href="
-										<?php
-										$curl = curl_init();
-										curl_setopt($curl, CURLOPT_URL, $b['link']);
-										curl_setopt($curl, CURLOPT_COOKIESESSION, true);
-										curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-										$return = curl_exec($curl);
-										curl_close($curl);
-										?>
-									"><?php echo $b['nameAction1'] ?></a>
+									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link'] ?>"><?php echo $b['nameAction1'] ?></a>
 									<?php } ?>
 									<!-- link2 -->
 									<?php  if($b['nameAction2'] != ''){ ?>
-									<a class="dropdown-item" href="
-										<?php
-										$curl = curl_init();
-										curl_setopt($curl, CURLOPT_URL, $b['link2']);
-										curl_setopt($curl, CURLOPT_COOKIESESSION, true);
-										curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-										$return = curl_exec($curl);
-										curl_close($curl);
-										?>
-									"><?php echo $b['nameAction2'] ?></a>
+									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link2'] ?>"><?php echo $b['nameAction2'] ?></a>
 									<?php } ?>
 									<!-- link3 -->
 									<?php  if($b['nameAction3'] != ''){ ?>
-									<a class="dropdown-item" href="
-										<?php
-										$curl = curl_init();
-										curl_setopt($curl, CURLOPT_URL, $b['link3']);
-										curl_setopt($curl, CURLOPT_COOKIESESSION, true);
-										curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-										$return = curl_exec($curl);
-										curl_close($curl);
-										?>
-									"><?php echo $b['nameAction3'] ?></a>
+									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link3'] ?>"><?php echo $b['nameAction3'] ?></a>
 									<?php } ?>
 									<!-- link4 -->
 									<?php  if($b['nameAction4'] != ''){ ?>
-									<a class="dropdown-item" href="
-										<?php
-										$curl = curl_init();
-										curl_setopt($curl, CURLOPT_URL, $b['link4']);
-										curl_setopt($curl, CURLOPT_COOKIESESSION, true);
-										curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-										$return = curl_exec($curl);
-										curl_close($curl);
-										?>
-									"><?php echo $b['nameAction4'] ?></a>
+									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link4'] ?>"><?php echo $b['nameAction4'] ?></a>
 									<?php } ?>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
