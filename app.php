@@ -11,8 +11,8 @@
 		?>
 	
 		<!-- Alert -->
-	
-					<span class="a"><br />
+				<br />
+				<span class="a">
 				<div class="sepleft">
 					<?php while($alert = $comp2->fetch()) { ?>
 					<?php
@@ -76,6 +76,7 @@
 			</span>
 			
 		<!-- Button trigger modal -->
+		<!--
 		</br>
 		<button type="button" class="btn btn-primary sepleft" data-toggle="modal" data-target="#exampleModal">
 		Add Computer
@@ -83,7 +84,7 @@
 				<button type="button" class="btn btn-primary sepleft" data-toggle="modal" data-target="#moddalComponent">
 		Add Component
 		</button>
-		
+		-->
 		<?php
 			session_start();
 			error_reporting(0);
@@ -126,7 +127,6 @@
 			</div>
 		  </div>
 		</div>
-	<br /><br />
 	
 	
 		<div class="modal fade" id="moddalComponent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -189,11 +189,11 @@
 			</div>
 		  </div>
 		</div>		
-	</br></br>
+	</br>
 
 		<!-- pc list -->
 		
-			<span class="a"></br>
+			<span class="a">
 				<div class="sepleft">
 					<?php while($a = $pc->fetch()) { ?>
 					<div class="centre">
