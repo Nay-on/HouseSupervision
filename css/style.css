@@ -53,4 +53,12 @@
 	cursor: pointer;
 }
 
+.bar {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  background-color: #636e72;
+}
+
 

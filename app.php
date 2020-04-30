@@ -236,10 +236,12 @@
 					</div>
 				</div>
 			</span>
-			
+		
 			<!-- Component -->
-			
-			<span class="a"></br>
+			<br />
+			<div class="bar"></div>
+			<br />
+			<span class="a">
 				<div class="sepleft">
 
 					<?php while($b = $comp->fetch()) { ?>
@@ -307,7 +309,7 @@
 					</div>
 				</div>
 			</span>
-	
+		
     <!-- Optional JavaScript -->
 	
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
