@@ -11,7 +11,7 @@
 		?>
 	
 		<!-- Alert -->
-				<br />
+				<br>
 				<span class="a">
 				<div class="sepleft">
 					<?php while($alert = $comp2->fetch()) { ?>
@@ -144,39 +144,39 @@
 				
 				<form action="addcomponent.php" method="post">
 					<p>
-						<label for="ip">Name : </label><br />
+						<label for="ip">Name : </label><br>
 						<input type="text" name="name" id="name">
 					</p>
-					<label for="ip">type : </label><br />
+					<label for="ip">type : </label><br>
 					<select name="type" class="form-control">
 						<option>Lightbulb</option>
 						<option>Outlet</option>
 						<option>Other</option>
-					</select><br />
+					</select><br>
 					
 					<p>
-						<label for="ip">Action 1 name : </label><br />
-						<input type="text" name="action1" id="action1"><br />
-						<label for="ip">Action 1 IFTTT Link : </label><br />
-						<input type="text" name="linkcp" id="linkcp"><br />
+						<label for="ip">Action 1 name : </label><br>
+						<input type="text" name="action1" id="action1"><br>
+						<label for="ip">Action 1 IFTTT Link : </label><br>
+						<input type="text" name="linkcp" id="linkcp"><br>
 					</p>
 					<p>
-						<label for="ip">Action 2 name : </label><br />
-						<input type="text" name="action2" id="action2"><br />
-						<label for="ip">Action 3 IFTTT Link : </label><br />
-						<input type="text" name="linkcp2" id="linkcp2"><br />
+						<label for="ip">Action 2 name : </label><br>
+						<input type="text" name="action2" id="action2"><br>
+						<label for="ip">Action 3 IFTTT Link : </label><br>
+						<input type="text" name="linkcp2" id="linkcp2"><br>
 					</p>
 					<p>
-						<label for="ip">Action 3 name : </label><br />
-						<input type="text" name="action3" id="action3"><br />
-						<label for="ip">Action 3 IFTTT Link : </label><br />
-						<input type="text" name="linkcp3" id="linkcp3"><br />
+						<label for="ip">Action 3 name : </label><br>
+						<input type="text" name="action3" id="action3"><br>
+						<label for="ip">Action 3 IFTTT Link : </label><br>
+						<input type="text" name="linkcp3" id="linkcp3"><br>
 					</p>
 					<p>
-						<label for="ip">Action 4 name : </label><br />
-						<input type="text" name="action4" id="action4"><br />
-						<label for="ip">Action 4 IFTTT Link : </label><br />
-						<input type="text" name="linkcp4" id="linkcp4"><br />
+						<label for="ip">Action 4 name : </label><br>
+						<input type="text" name="action4" id="action4"><br>
+						<label for="ip">Action 4 IFTTT Link : </label><br>
+						<input type="text" name="linkcp4" id="linkcp4"><br>
 					</p>
 					
 				
@@ -198,7 +198,7 @@
 					<?php while($a = $pc->fetch()) { ?>
 					<div class="centre">
 						<div class="card" style="width: 18rem;">
-							<br />
+							<br>
 							<i class="fas fa-desktop fa-7x"></i>
 							<div class="card-body">
 								<h5 class="card-title"><?php echo $a['name'] ?></h5>
@@ -223,7 +223,7 @@
 					<div class="centre">
 						<div class="add">
 							<div class="card" style="width: 18rem;">
-								<br />
+								<br>
 								<a data-toggle="modal" data-toggle="modal" data-target="#exampleModal">
 									<i class="fas fa-plus fa-7x" style="opacity: 0.50;padding:51px;"></i>
 								</a>
@@ -238,16 +238,16 @@
 			</span>
 		
 			<!-- Component -->
-			<br />
+			<br>
 			<div class="bar"></div>
-			<br />
+			<br>
 			<span class="a">
 				<div class="sepleft">
 
 					<?php while($b = $comp->fetch()) { ?>
 					<div class="centre">
 						<div class="card" style="width: 18rem;">
-							<br />
+							<br>
 							<?php 
 							switch ($b['type']) {
 								case 'Lightbulb':
@@ -296,7 +296,7 @@
 					<div class="centre">
 						<div class="add">
 							<div class="card" style="width: 18rem;">
-								<br />
+								<br>
 								<a data-toggle="modal" data-target="#moddalComponent">
 									<i class="fas fa-plus fa-7x" style="opacity: 0.50;padding:51px;"></i>
 								</a>
