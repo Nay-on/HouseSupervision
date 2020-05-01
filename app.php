@@ -11,7 +11,6 @@
 		?>
 	
 		<!-- Alert -->
-				<br>
 				<span class="a">
 				<div class="sepleft">
 					<?php while($alert = $comp2->fetch()) { ?>
@@ -75,16 +74,6 @@
 				</div>
 			</span>
 			
-		<!-- Button trigger modal -->
-		<!--
-		</br>
-		<button type="button" class="btn btn-primary sepleft" data-toggle="modal" data-target="#exampleModal">
-		Add Computer
-		</button>
-				<button type="button" class="btn btn-primary sepleft" data-toggle="modal" data-target="#moddalComponent">
-		Add Component
-		</button>
-		-->
 		<?php
 			session_start();
 			error_reporting(0);
@@ -195,6 +184,18 @@
 		
 			<span class="a">
 				<div class="sepleft">
+<div id="accordion" style="margin: 0px 0 15px 0;">
+	<div class="card">
+		<div class="card-header" id="headingOne">
+			<h5 class="mb-0">
+				<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					Computer
+				</button>
+			</h5>
+		</div>
+		<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+			<div class="card-body">
+
 					<?php while($a = $pc->fetch()) { ?>
 					<div class="centre">
 						<div class="card" style="width: 18rem;">
@@ -236,14 +237,27 @@
 					</div>
 				</div>
 			</span>
+			
+			</div>
+		</div>
+	</div>
+</div>
 		
 			<!-- Component -->
-			<br>
-			<div class="bar"></div>
-			<br>
 			<span class="a">
 				<div class="sepleft">
 
+				<div id="accordion2" style="margin: 0px 0 15px 0;">
+	<div class="card">
+		<div class="card-header" id="headingTwo">
+			<h5 class="mb-0">
+				<button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+					Component
+				</button>
+			</h5>
+		</div>
+		<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion2">
+			<div class="card-body">
 					<?php while($b = $comp->fetch()) { ?>
 					<div class="centre">
 						<div class="card" style="width: 18rem;">
@@ -309,7 +323,8 @@
 					</div>
 				</div>
 			</span>
-		
+		</div>
+	</div>
     <!-- Optional JavaScript -->
 	
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
