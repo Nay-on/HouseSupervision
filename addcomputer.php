@@ -9,9 +9,11 @@ if($db === false){
 // Escape user inputs for security
 $ip = mysqli_real_escape_string($db, $_REQUEST['ip']);
 $name = mysqli_real_escape_string($db, $_REQUEST['name']);
+$mac = mysqli_real_escape_string($db, $_REQUEST['mac']);
+
  
 // Attempt insert query execution
-$sql = "INSERT INTO pc_list (ip, name) VALUES ('$ip', '$name')";
+$sql = "INSERT INTO pc_list (ip, name, mac) VALUES ('$ip', '$name', '$mac')";
 if(mysqli_query($db, $sql)){
     echo "Records added successfully.";
 } else{
