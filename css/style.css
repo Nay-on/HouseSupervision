@@ -11,10 +11,18 @@
 	margin-right: 120px;
 }
 
+.specetop{
+	margin-top: 65px;
+}
+
 .header {
   padding: 10px 16px;
   background: #0984e3;
   color: #f1f1f1;
+  position: fixed;
+  z-index: 999;
+  left:0;
+  right:0;
 }
 
 .content {
@@ -62,13 +70,8 @@
   background-color: #636e72;
 }
 
-.alert {
-    margin-left: auto;
-    margin-right: auto;
-    table-layout: fixed;
-    border-collapse: collapse;
-    z-index: -1;
-    position:relative;
+.interli {
+	line-height: 0.8em;
 }
 
 

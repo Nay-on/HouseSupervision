@@ -2,7 +2,6 @@
 
 	<div class="header" id="myHeader">
 		<h2>House Supervision</h2>
-		<div id="heure" class="heure"></div>
 	</div>
 	<div class="menu">
 		<ul class="nav flex-column">

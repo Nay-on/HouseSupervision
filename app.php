@@ -11,9 +11,9 @@
 		?>
 	
 		<!-- Alert -->
-		<div class="alert">
-				<span class="a">
-				<div class="sepleft">
+		<div>
+			<span class="a">
+				<div>
 					<?php while($alert = $comp2->fetch()) { ?>
 					<?php
 						$idcompoAlert = $alert['id'];
@@ -170,26 +170,25 @@
 
 		<!-- pc list -->
 		
-			<span class="a">
-				<div class="sepleft">
-<div id="accordion" style="margin: 0px 0 15px 0;">
-	<div class="card">
-		<div class="card-header" id="headingOne">
-			<h5 class="mb-0">
-				<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-					Computer
-				</button>
-			</h5>
-		</div>
-		<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-			<div class="card-body">
-
+			<!--<span class="a">-->
+<div class="sepleft specetop">
+	<div id="accordion" style="margin: 0px 0 15px 0;">
+		<div class="card">
+			<div class="card-header" id="headingOne">
+				<h5 class="mb-0">
+					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						Computer
+					</button>
+				</h5>
+			</div>
+			<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="card-body">
 					<?php while($a = $pc->fetch()) { ?>
 					<div class="centre">
 						<div class="card" style="width: 18rem;">
 							<br>
 							<i class="fas fa-desktop fa-7x"></i>
-							<div class="card-body">
+							<div class="card-body interli">
 								<h5 class="card-title"><?php echo $a['name'] ?></h5>
 								<p class="card-text"><?php echo $a['ip'] ?></p>
 								<p class="card-text"><?php echo $a['mac'] ?></p>
@@ -198,14 +197,13 @@
 								  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									Actions
 								  </button>
-								  <div class="dropdown-menu">
-									<a class="dropdown-item" href="wol.php?mac=<?php echo $a['mac'] ?>">Turn On</a>
-									<a class="dropdown-item" href="#">Turn Off</a>
-									<a class="dropdown-item" href="#">ETA</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="removeComputer.php?rm=<?php echo $a['id'] ?>">Remove <?php echo $a['name'] ?></a>
-									
-								  </div>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="wol.php?mac=<?php echo $a['mac'] ?>">Turn On</a>
+										<a class="dropdown-item" href="#">Turn Off</a>
+										<a class="dropdown-item" href="#">ETA</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="removeComputer.php?rm=<?php echo $a['id'] ?>">Remove <?php echo $a['name'] ?></a>
+									</div>
 								</div>
 							</div>
 						</div>			
@@ -216,7 +214,7 @@
 							<div class="card" style="width: 18rem;">
 								<br>
 								<a data-toggle="modal" data-toggle="modal" data-target="#exampleModal">
-									<i class="fas fa-plus fa-7x" style="opacity: 0.50;padding:71px;"></i>
+									<i class="fas fa-plus fa-7x" style="opacity: 0.50;padding:59px;"></i>
 								</a>
 								<div class="card-body">
 									<h5 class="card-title"></h5>
@@ -225,9 +223,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</span>
-			
+				</div>				
 			</div>
 		</div>
 	</div>
