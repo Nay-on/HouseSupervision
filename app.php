@@ -282,7 +282,7 @@
 									<a class="dropdown-item <?php if($b['link'] == '') echo disabled ?>" href="ifttt.php?link=<?php echo $b['link4'] ?>&id=<?php echo $b['id'] ?>&action=4"><?php echo $b['nameAction4']; if($b['link'] == '') echo " (no Ifttt action found)" ?></a>
 									<?php } ?>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item <?php if($b['link'] == '') echo disabled ?>" href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
+									<a class="dropdown-item " href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
 								  </div>
 								</div>
 							</div>
