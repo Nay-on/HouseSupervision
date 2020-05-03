@@ -9,14 +9,14 @@ if($db === false){
 // Escape user inputs for security
 $ifttt = mysqli_real_escape_string($db, $_REQUEST['iftttKey']);
 
-$sql = "DELETE FROM ifttKey WHERE id = 1";
+$sql = "DELETE FROM ifttkey WHERE id = 1";
 if(mysqli_query($db, $sql)){
     echo "Records removed successfully.";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);
 }
  
-$sql = "ALTER TABLE ifttKey AUTO_INCREMENT = 1";
+$sql = "ALTER TABLE ifttkey AUTO_INCREMENT = 1";
 if(mysqli_query($db, $sql)){
 	
 } else{
@@ -24,7 +24,7 @@ if(mysqli_query($db, $sql)){
 }
  
 // Attempt insert query execution
-$sql = "INSERT INTO ifttKey (iftttkey, changed) VALUES ('$ifttt', 1)";
+$sql = "INSERT INTO ifttkey (iftttkey, changed) VALUES ('$ifttt', 1)";
 if(mysqli_query($db, $sql)){
     echo "Records added successfully.";
 } else{
