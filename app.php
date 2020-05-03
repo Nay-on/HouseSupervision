@@ -14,8 +14,7 @@
 		<div>
 			<span class="a">
 				<div>
-					<?php while($alert = $comp2->fetch()) { ?>
-					<?php
+					<?php while($alert = $comp2->fetch()) {
 						$idcompoAlert = $alert['id'];
 						if($alert['action1state'] == 1){
 							$sql = "UPDATE component SET action1state = 0 WHERE id = $idcompoAlert";
@@ -49,9 +48,7 @@
 								<?php
 							}
 						}
-						
-					?>
-					<?php } ?>
+					} ?>
 				</div>
 			</span>
 		</div>
@@ -134,25 +131,25 @@
 					<p>
 						<label for="ip">Action 1 name : </label><br>
 						<input type="text" name="action1" id="action1"><br>
-						<label for="ip">Action 1 IFTTT Link : </label><br>
+						<label for="ip">Action 1 IFTTT name : </label><br>
 						<input type="text" name="linkcp" id="linkcp"><br>
 					</p>
 					<p>
 						<label for="ip">Action 2 name : </label><br>
 						<input type="text" name="action2" id="action2"><br>
-						<label for="ip">Action 3 IFTTT Link : </label><br>
+						<label for="ip">Action 3 IFTTT name : </label><br>
 						<input type="text" name="linkcp2" id="linkcp2"><br>
 					</p>
 					<p>
 						<label for="ip">Action 3 name : </label><br>
 						<input type="text" name="action3" id="action3"><br>
-						<label for="ip">Action 3 IFTTT Link : </label><br>
+						<label for="ip">Action 3 IFTTT name : </label><br>
 						<input type="text" name="linkcp3" id="linkcp3"><br>
 					</p>
 					<p>
 						<label for="ip">Action 4 name : </label><br>
 						<input type="text" name="action4" id="action4"><br>
-						<label for="ip">Action 4 IFTTT Link : </label><br>
+						<label for="ip">Action 4 IFTTT name : </label><br>
 						<input type="text" name="linkcp4" id="linkcp4"><br>
 					</p>
 					
@@ -170,7 +167,6 @@
 
 		<!-- pc list -->
 		
-			<!--<span class="a">-->
 <div class="sepleft specetop">
 	<div id="accordion" style="margin: 0px 0 15px 0;">
 		<div class="card">
@@ -193,7 +189,7 @@
 								<p class="card-text"><?php echo $a['ip'] ?></p>
 								<p class="card-text"><?php echo $a['mac'] ?></p>
 								
-								<div class="btn-group">
+								<div class="btn-group noline">
 								  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									Actions
 								  </button>
@@ -271,22 +267,22 @@
 								  <div class="dropdown-menu">
 									<!-- link1 -->
 									<?php  if($b['nameAction1'] != ''){ ?>
-									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link'] ?>&id=<?php echo $b['id'] ?>&action=1"><?php echo $b['nameAction1'] ?></a>
+									<a class="dropdown-item <?php if($b['link'] == '') echo disabled ?>" href="ifttt.php?link=<?php echo $b['link'] ?>&id=<?php echo $b['id'] ?>&action=1" ><?php echo $b['nameAction1']; if($b['link'] == '') echo " (no Ifttt action found)"?></a>
 									<?php } ?>
 									<!-- link2 -->
 									<?php  if($b['nameAction2'] != ''){ ?>
-									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link2'] ?>&id=<?php echo $b['id'] ?>&action=2"><?php echo $b['nameAction2'] ?></a>
+									<a class="dropdown-item <?php if($b['link'] == '') echo disabled ?>" href="ifttt.php?link=<?php echo $b['link2'] ?>&id=<?php echo $b['id'] ?>&action=2"><?php echo $b['nameAction2']; if($b['link'] == '') echo " (no Ifttt action found)" ?></a>
 									<?php } ?>
 									<!-- link3 -->
 									<?php  if($b['nameAction3'] != ''){ ?>
-									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link3'] ?>&id=<?php echo $b['id'] ?>&action=3"><?php echo $b['nameAction3'] ?></a>
+									<a class="dropdown-item <?php if($b['link'] == '') echo disabled ?>" href="ifttt.php?link=<?php echo $b['link3'] ?>&id=<?php echo $b['id'] ?>&action=3"><?php echo $b['nameAction3']; if($b['link'] == '') echo " (no Ifttt action found)" ?></a>
 									<?php } ?>
 									<!-- link4 -->
 									<?php  if($b['nameAction4'] != ''){ ?>
-									<a class="dropdown-item" href="ifttt.php?link=<?php echo $b['link4'] ?>&id=<?php echo $b['id'] ?>&action=4"><?php echo $b['nameAction4'] ?></a>
+									<a class="dropdown-item <?php if($b['link'] == '') echo disabled ?>" href="ifttt.php?link=<?php echo $b['link4'] ?>&id=<?php echo $b['id'] ?>&action=4"><?php echo $b['nameAction4']; if($b['link'] == '') echo " (no Ifttt action found)" ?></a>
 									<?php } ?>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
+									<a class="dropdown-item <?php if($b['link'] == '') echo disabled ?>" href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
 								  </div>
 								</div>
 							</div>

@@ -74,4 +74,6 @@
 	line-height: 0.8em;
 }
 
-
+.noline {
+	line-height: 1.4em;
+}

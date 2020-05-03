@@ -17,6 +17,7 @@
 		$pc = $bdd->query('SELECT * FROM pc_list ORDER BY id DESC');
 		$comp = $bdd->query('SELECT * FROM component ORDER BY name DESC');
 		$comp2 = $bdd->query('SELECT * FROM component ORDER BY name DESC');
+		$setting = $bdd->query('SELECT * FROM ifttkey ORDER BY id DESC');
 	?>
 
   </head>

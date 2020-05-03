@@ -3,14 +3,24 @@
 include('include/dbconnect.php');
  
 // Escape user inputs for security
-$link = $_GET['link'];
+$actionName = $_GET['link'];
 $id = $_GET['id'];
 $action = $_GET['action'];
 
+$setting2 = $bdd->query('SELECT * FROM ifttkey ORDER BY id DESC');
+while($b = $setting2->fetch()) {
+$key = $b['iftttkey'];
+}
+
+$linkFinal = "https://maker.ifttt.com/trigger/". $actionName . "/with/key/" . $key;
+
 $curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, $link);
+curl_setopt($curl, CURLOPT_URL, $linkFinal);
 curl_setopt($curl, CURLOPT_COOKIESESSION, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+echo $linkFinal;
+
 $return = curl_exec($curl);
 curl_close($curl);
 
