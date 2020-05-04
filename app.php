@@ -125,6 +125,10 @@
 					<select name="type" class="form-control">
 						<option>Lightbulb</option>
 						<option>Outlet</option>
+						<option>Phone</option>
+						<option>Router</option>
+						<option>Electronics</option>
+						<option>Camera</option>
 						<option>Other</option>
 					</select><br>
 					
@@ -251,6 +255,18 @@
 									break;
 								case 'Outlet':
 									 ?><i class="fas fa-plug fa-7x"></i><?php
+									break;
+								case 'Router':
+									 ?><i class="fas fa-network-wired fa-7x"></i><?php
+									break;
+								case 'Phone':
+									 ?><i class="fas fa-mobile fa-7x"></i><?php
+									break;
+								case 'Electronics':
+									 ?><i class="fas fa-microscope fa-7x"></i><?php
+									break;
+								case 'Camera':
+									 ?><i class="fas fa-video fa-7x"></i><?php
 									break;
 								case 'Other':
 									?><i class="fas fa-network-wired fa-7x"></i><?php
