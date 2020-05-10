@@ -12,6 +12,6 @@ exec('python Wol.py '.$mac);
 // Close connection
 mysqli_close($db);
 
-header('Location: app.php');
+include('redirections/appRedirect.php');
 
 ?>

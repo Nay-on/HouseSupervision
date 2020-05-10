@@ -5,7 +5,7 @@
 		include('include/head.php');
 	?>
 
-	<body>
+	<body onload="init()">
 
 			<div>
 			<div>
@@ -49,6 +49,20 @@
 				</div>
 			</div>
 		</form>
+		
+			<div class="card" style="width: 18rem; margin-left: 110px;">
+				<div class="card-body">
+					<p class="card-text"></p>
+					
+		<div class="custom-control custom-checkbox">
+			<label for="customCheck1" style="margin-right: 30px;">Night mode</label>
+			<input type="checkbox" class="custom-control-input" id="customCheck1" onclick="night();">
+			<label class="custom-control-label" for="customCheck1"></label>
+		</div>
+					
+				</div>
+			</div>
+		
 			<!-- LOGOUT -->
 			<?php
 			    if($_SESSION['username'] !== ""){
@@ -59,7 +73,7 @@
                    if($_GET['deconnexion']==true)
                    {  
                       session_unset();
-                      header("location:index.php");
+                      header("location:index");
                    }
                 }
 			?>
@@ -76,6 +90,35 @@
 			<?php include('include/login.php'); ?>
 	
     <!-- Optional JavaScript -->
+	
+	<script>
+		function night(){
+			var checkbox = document.getElementById("customCheck1");
+			if(checkbox.checked == true){
+				document.body.style.backgroundColor  = "#636e72";
+				setCookie("night","true","365");
+			}
+			if(checkbox.checked == false){
+				document.body.style.backgroundColor  = "white";
+				setCookie("night","false","365");
+			}
+		}
+		function init() {
+			if(getCookie("night") == "true"){
+				document.body.style.backgroundColor  = "#636e72";
+				document.getElementById("customCheck1").checked = true;
+			}
+			if(getCookie("night") == "false"){
+				document.body.style.backgroundColor  = "white";
+				document.getElementById("customCheck1").checked = false;
+			}
+			
+			
+			
+		}
+		
+	</script>
+	
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

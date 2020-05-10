@@ -5,7 +5,7 @@
 		include('include/head.php');
 	?>
 
-	<body>
+	<body onload="init()">
 		<?php
 		include('include/menu.php');
 		?>
@@ -80,15 +80,15 @@
 				<form action="addcomputer.php" method="post">
 					<p>
 						<label for="ip">Name : </label>
-						<input type="text" name="name" id="name">
+						<input class="form-control" type="text" name="name" id="name">
 					</p>
 					<p>
 						<label for="ip">@Mac : </label>
-						<input type="text" name="mac" id="mac">
+						<input class="form-control" type="text" name="mac" id="mac">
 					</p>
 					<p>
 						<label for="ip">@Ip : </label>
-						<input type="text" name="ip" id="ip">
+						<input class="form-control" type="text" name="ip" id="ip">
 					</p>
 					
 				
@@ -119,7 +119,7 @@
 				<form action="addcomponent.php" method="post">
 					<p>
 						<label for="ip">Name : </label><br>
-						<input type="text" name="name" id="name">
+						<input class="form-control" type="text" name="name" id="name">
 					</p>
 					<label for="ip">type : </label><br>
 					<select name="type" class="form-control">
@@ -131,30 +131,37 @@
 						<option>Camera</option>
 						<option>Other</option>
 					</select><br>
+					<label for="brand">Brand : </label><br>
+					<select name="brand" class="form-control">
+						<option>Lifx</option>
+						<option>Lifx-RGB</option>
+						<option>YeeLight</option>
+						<option>other</option>
+					</select><br>
 					
 					<p>
 						<label for="ip">Action 1 name : </label><br>
-						<input type="text" name="action1" id="action1"><br>
+						<input class="form-control" type="text" name="action1" id="action1"><br>
 						<label for="ip">Action 1 IFTTT name : </label><br>
-						<input type="text" name="linkcp" id="linkcp"><br>
+						<input class="form-control" type="text" name="linkcp" id="linkcp"><br>
 					</p>
 					<p>
 						<label for="ip">Action 2 name : </label><br>
-						<input type="text" name="action2" id="action2"><br>
+						<input class="form-control" type="text" name="action2" id="action2"><br>
 						<label for="ip">Action 3 IFTTT name : </label><br>
-						<input type="text" name="linkcp2" id="linkcp2"><br>
+						<input class="form-control" type="text" name="linkcp2" id="linkcp2"><br>
 					</p>
 					<p>
 						<label for="ip">Action 3 name : </label><br>
-						<input type="text" name="action3" id="action3"><br>
+						<input class="form-control" type="text" name="action3" id="action3"><br>
 						<label for="ip">Action 3 IFTTT name : </label><br>
-						<input type="text" name="linkcp3" id="linkcp3"><br>
+						<input class="form-control" type="text" name="linkcp3" id="linkcp3"><br>
 					</p>
 					<p>
 						<label for="ip">Action 4 name : </label><br>
-						<input type="text" name="action4" id="action4"><br>
+						<input class="form-control" type="text" name="action4" id="action4"><br>
 						<label for="ip">Action 4 IFTTT name : </label><br>
-						<input type="text" name="linkcp4" id="linkcp4"><br>
+						<input class="form-control" type="text" name="linkcp4" id="linkcp4"><br>
 					</p>
 					
 				
@@ -173,7 +180,7 @@
 		
 <div class="sepleft specetop">
 	<div id="accordion" style="margin: 0px 0 15px 0;">
-		<div class="card">
+		<div class="card" id="card1">
 			<div class="card-header" id="headingOne">
 				<h5 class="mb-0">
 					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -234,7 +241,7 @@
 				<div class="sepleft">
 
 				<div id="accordion2" style="margin: 0px 0 15px 0;">
-	<div class="card">
+	<div class="card" id="card2">
 		<div class="card-header" id="headingTwo">
 			<h5 class="mb-0">
 				<button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -301,6 +308,34 @@
 									<a class="dropdown-item " href="removeComponent.php?rm=<?php echo $b['id'] ?>">Remove <?php echo $b['name'] ?></a>
 								  </div>
 								</div>
+
+								<!-- Modal lumi -->
+								<?php if($b['type'] == "Lightbulb" && 0) { ?>
+									<form>
+											<div class="d-flex justify-content-center my-4">
+												<span class="font-weight-bold text-primary ml-2" style="margin-right: 16px;">Brightness </span>
+												<div class="w-75">
+														<input type="range" class="custom-range" id="range" min="1" max="100">
+												</div>
+												<span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
+											</div>
+											<?php if($b['brand'] == "Lifx") {?>
+											<div class="d-flex justify-content-center my-4">
+												<span class="font-weight-bold text-primary ml-2" style="margin-right: 48px;">Kelvin </span>
+												<div class="w-75">
+														<input type="range" class="custom-range" id="range2" min="1500" max="6000">
+												</div>
+												<span class="font-weight-bold text-primary ml-2 valueSpan1"></span>
+											</div>
+											<?php } ?>
+											<?php if($b['brand'] == "Lifx-RGB") {?>
+											<div style=" text-align: left;">
+												<span class="font-weight-bold text-primary ml-2" style="margin-right: 190px;">Color </span>
+												<input type="color" id="head" name="color" value="#0984e3">
+											</div>
+											<?php } ?>
+									</form>
+								<?php }?>
 							</div>
 						</div>
 					</div>
@@ -323,10 +358,20 @@
 			</span>
 		</div>
 	</div>
-    <!-- Optional JavaScript -->
 	
-		
-
+    <!-- Optional JavaScript -->
+	<script>
+		function init() {
+			if(getCookie("night") == "true"){
+				document.body.style.backgroundColor  = "#636e72";
+				document.getElementById("collapseOne").style.backgroundColor = "#636e72";
+				document.getElementById("card1").style.border = "0px solid rgba(0,0,0,.125)";
+				
+				document.getElementById("collapseTwo").style.backgroundColor = "#636e72";
+				document.getElementById("card2").style.border = "0px solid rgba(0,0,0,.125)";
+			}
+		}
+	</script>
 	
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

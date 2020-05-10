@@ -34,6 +34,6 @@ if(mysqli_query($db, $sql)){
 // Close connection
 mysqli_close($db);
 
-header('Location: setting.php');
+header('Location: setting');
 
 ?>

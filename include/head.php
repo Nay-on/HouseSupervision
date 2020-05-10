@@ -12,6 +12,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/css/alertify.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/AlertifyJS/1.13.1/alertify.js"></Script>
+	<script src="js/light.js"></script>
+	<script src="js/cookie.js"></script>
+	<?php include('include/menu.php'); ?>
+	
+
 	<?php
 		include('dbconnect.php');
 		$pc = $bdd->query('SELECT * FROM pc_list ORDER BY id DESC');

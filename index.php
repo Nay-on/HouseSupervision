@@ -29,7 +29,7 @@
                    if($_GET['deconnexion']==true)
                    {  
                       session_unset();
-                      header("location:index.php");
+                      header("location:index");
                    }
                 }
 			?>
@@ -48,19 +48,24 @@
     <!-- Optional JavaScript -->
 	<script>
 		function init() {
-		<?php
-			if(isset($_GET['erreur'])){
-			$err = $_GET['erreur'];
-			if($err==1 || $err==2)
+			<?php
+				if(isset($_GET['erreur'])){
+				$err = $_GET['erreur'];
+				if($err==1 || $err==2)
+				?>
+				$('#login').modal('show');
+				<?php }
+				
+				if($_SESSION['username'] == ""){
+					?> $('#login').modal('show'); <?php
+				}
 			?>
-			$('#login').modal('show');
-			<?php }
-			
-			if($_SESSION['username'] == ""){
-				?> $('#login').modal('show'); <?php
+			if(getCookie("night") == "true"){
+				document.body.style.backgroundColor  = "#636e72";
 			}
-		?>
-			
+			if(getCookie("night") == "false"){
+				document.body.style.backgroundColor  = "white";
+			}
 		}
 	</script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

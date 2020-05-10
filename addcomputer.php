@@ -23,6 +23,6 @@ if(mysqli_query($db, $sql)){
 // Close connection
 mysqli_close($db);
 
-header('Location: app.php');
+include('redirections/appRedirect.php');
 
 ?>
