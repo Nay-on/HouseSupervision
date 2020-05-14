@@ -87,7 +87,7 @@
 						<input class="form-control" type="text" name="mac" id="mac">
 					</p>
 					<p>
-						<label for="ip">@Ip : </label>
+						<label for="ip">(optional) @Ip : </label>
 						<input class="form-control" type="text" name="ip" id="ip">
 					</p>
 					
