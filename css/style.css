@@ -7,35 +7,23 @@
 }
 
 .sepleft{
-	margin-left: 100px;
+	margin-left: 120px;
+	margin-right: 120px;
+}
+
+.specetop{
+	margin-top: 65px;
 }
 
 .header {
   padding: 10px 16px;
   background: #0984e3;
   color: #f1f1f1;
+  position: fixed;
+  z-index: 999;
+  left:0;
+  right:0;
 }
-
-.accordeon{
-  margin-left: 100px;
-  margin-right: 20px;
-}
-
-.tutobox {
-  width: 90%;
-  padding-top: 0px;
-  padding-left: 5px;
-  margin-top: -20px;
-  margin-left: 80px;
-  display: flex;
-  justify-content: row;
-}
-
-.tutoimgbig {
-  width: 100%;
-  height: auto;
-}
-
 
 .content {
   padding: 16px;
@@ -69,4 +57,83 @@
   color: #74b9ff;
 }
 
+.add a:hover{
+	opacity: 0.65;
+	cursor: pointer;
+}
 
+.bar {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  background-color: #636e72;
+}
+
+.interli {
+	line-height: 0.8em;
+}
+
+.noline {
+	line-height: 1.4em;
+}
+
+/*slider*/
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #0984e3; /* blue background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.accordeon{
+  margin-left: 100px;
+  margin-right: 20px;
+}
+
+.tutobox {
+  width: 90%;
+  padding-top: 0px;
+  padding-left: 5px;
+  margin-top: -20px;
+  margin-left: 80px;
+  display: flex;
+  justify-content: row;
+}
+
+.tutoimgbig {
+  width: 100%;
+  height: auto;
+}
