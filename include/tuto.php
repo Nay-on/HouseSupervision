@@ -1,4 +1,3 @@
-	<!-- DEBUT DU MENU -->
 	<div class="tutobox">
 		<h2 style = "margin-top: 4%;">Welcome, here is a tutorial</h2>
 	</div>
@@ -149,4 +148,3 @@
 		</div>
 	  </div>
 	</div>
-	<!-- FIN DU MENU -->

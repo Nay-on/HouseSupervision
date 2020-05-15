@@ -6,9 +6,6 @@
 	?>
 
 	<body onload="init()">
-		<?php
-		include('include/menu.php');
-		?>
 	
 		<!-- Alert -->
 		<div>

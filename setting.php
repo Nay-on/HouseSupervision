@@ -23,17 +23,14 @@
 		</div>
 	
 	<!-- DEBUT DU MENU -->
-
 	
-	<?php
-		include('include/menu.php');
-	?>
-	
-	<?php
-		session_start();
-		error_reporting(0);
-		if($_SESSION['username'] != ""){ ?>
-			<!-- CODE ICI -->
+		<?php
+			session_start();
+			error_reporting(0);
+			if($_SESSION['username'] == ""){
+				header("location:index.php");
+			}
+		?>
 			
 			
 			
@@ -77,17 +74,6 @@
                    }
                 }
 			?>
-			
-			<!-- FIN CODE -->
-			
-	<?php } else { ?>
-		<button id="btnAnouncement" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
-			Login
-		</button>
-	<?php } ?>
-	
-			<!-- Modal -->
-			<?php include('include/login.php'); ?>
 	
     <!-- Optional JavaScript -->
 	
