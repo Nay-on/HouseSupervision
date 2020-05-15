@@ -44,6 +44,10 @@
 	
 			<!-- Modal -->
 			<?php include('include/login.php'); ?>
+			
+	<?php
+		include('include/tuto.php');
+	?>
 	
     <!-- Optional JavaScript -->
 	<script>
