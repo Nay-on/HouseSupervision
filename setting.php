@@ -32,9 +32,7 @@
 			}
 		?>
 			
-			
-			
-		<form class="speceleft" style="	padding-top: 120px; margin-left: 110px;" action="settingupload.php" method="post">
+		<form class="speceleft" style="	padding-top: 30px; margin-left: 110px;" action="settingupload.php" method="post">
 			<div class="card" style="width: 18rem;">
 				<div class="card-body">
 					<p class="card-text"></p>
