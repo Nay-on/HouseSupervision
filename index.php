@@ -8,16 +8,14 @@
 	<body onload="init()">
 
 	<!-- DEBUT DU MENU -->
-
-	<?php
-		include('include/menu.php');
-	?>
 	
 	<?php
 		session_start();
 		error_reporting(0);
 		if($_SESSION['username'] != ""){ ?>
 			<!-- CODE ICI -->
+			
+			<?php include('include/tuto.php'); ?>
 			
 			<!-- LOGOUT -->
 			<?php
@@ -29,7 +27,7 @@
                    if($_GET['deconnexion']==true)
                    {  
                       session_unset();
-                      header("location:index");
+                      header("location:index.php");
                    }
                 }
 			?>
@@ -48,24 +46,17 @@
     <!-- Optional JavaScript -->
 	<script>
 		function init() {
-			<?php
-				if(isset($_GET['erreur'])){
-				$err = $_GET['erreur'];
-				if($err==1 || $err==2)
-				?>
-				$('#login').modal('show');
-				<?php }
-				
-				if($_SESSION['username'] == ""){
-					?> $('#login').modal('show'); <?php
-				}
+			//$('#login').modal('show');
+			
+		<?php
+			if(isset($_GET['erreur'])){
+			$err = $_GET['erreur'];
+			if($err==1 || $err==2)
 			?>
-			if(getCookie("night") == "true"){
-				document.body.style.backgroundColor  = "#636e72";
-			}
-			if(getCookie("night") == "false"){
-				document.body.style.backgroundColor  = "white";
-			}
+			$('#login').modal('show');
+			<?php }
+		?>
+			
 		}
 	</script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
