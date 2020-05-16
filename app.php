@@ -112,7 +112,7 @@
 				
 				<!-- Add computer form -->
 				
-				<form action="include/shutdown.php" method="post">
+				<form action="shutdown.php" method="post">
 					<p>
 						<label for="ip">PC's Username : </label>
 						<input class="form-control" type="text" name="usern" id="usern">
