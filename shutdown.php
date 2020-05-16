@@ -7,8 +7,9 @@ include('include/dbconnect.php');
 // Escape user inputs for security
 $username = $_GET['usern'];
 $password = $_GET['psswd'];
-$ip = ?><script>getCookie("shut");</script><?php;
-
+if(isset($_COOKIE["shut"])){ 
+$ip = $_COOKIE["shut"];
+}
 //Execution du script python. Trame bien envoyée (confirmation wireshark)
 
 exec('python shutdown.py '. $username . ' ' . $password . ' ' . $ip);
