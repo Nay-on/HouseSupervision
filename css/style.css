@@ -118,22 +118,5 @@
   background: #4CAF50; /* Green background */
   cursor: pointer; /* Cursor on hover */
 }
-.accordeon{
-  margin-left: 100px;
-  margin-right: 20px;
-}
 
-.tutobox {
-  width: 90%;
-  padding-top: 0px;
-  padding-left: 5px;
-  margin-top: -20px;
-  margin-left: 80px;
-  display: flex;
-  justify-content: row;
-}
 
-.tutoimgbig {
-  width: 100%;
-  height: auto;
-}

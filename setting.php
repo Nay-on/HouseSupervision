@@ -23,16 +23,21 @@
 		</div>
 	
 	<!-- DEBUT DU MENU -->
+
 	
-		<?php
-			session_start();
-			error_reporting(0);
-			if($_SESSION['username'] == ""){
-				header("location:index.php");
-			}
-		?>
+	<?php
+		include('include/menu.php');
+	?>
+	
+	<?php
+		session_start();
+		error_reporting(0);
+		if($_SESSION['username'] != ""){ ?>
+			<!-- CODE ICI -->
 			
-		<form class="speceleft" style="	padding-top: 90px; margin-left: 110px;" action="settingupload.php" method="post">
+			
+			
+		<form class="speceleft" style="	padding-top: 120px; margin-left: 110px;" action="settingupload.php" method="post">
 			<div class="card" style="width: 18rem;">
 				<div class="card-body">
 					<p class="card-text"></p>
@@ -72,6 +77,17 @@
                    }
                 }
 			?>
+			
+			<!-- FIN CODE -->
+			
+	<?php } else { ?>
+		<button id="btnAnouncement" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
+			Login
+		</button>
+	<?php } ?>
+	
+			<!-- Modal -->
+			<?php include('include/login.php'); ?>
 	
     <!-- Optional JavaScript -->
 	

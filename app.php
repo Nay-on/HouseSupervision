@@ -6,6 +6,9 @@
 	?>
 
 	<body onload="init()">
+		<?php
+		include('include/menu.php');
+		?>
 	
 		<!-- Alert -->
 		<div>
@@ -84,42 +87,8 @@
 						<input class="form-control" type="text" name="mac" id="mac">
 					</p>
 					<p>
-						<label for="ip">(optional) @Ip : </label>
+						<label for="ip">@Ip : </label>
 						<input class="form-control" type="text" name="ip" id="ip">
-					</p>
-					
-				
-				</div>
-			  <div class="modal-footer">
-				<input class="btn btn-primary" type="submit" value="Submit" >
-				</form>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			  </div>
-			</div>
-		  </div>
-		</div>
-		
-		<div class="modal fade" id="shutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog" role="document">
-			<div class="modal-content">
-			  <div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Add Computer</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				  <span aria-hidden="true">&times;</span>
-				</button>
-			  </div>
-			  <div class="modal-body">
-				
-				<!-- Add computer form -->
-				
-				<form action="shutdown.php" method="post">
-					<p>
-						<label for="ip">PC's Username : </label>
-						<input class="form-control" type="text" name="usern" id="usern">
-					</p>
-					<p>
-						<label for="ip">PC's Password : </label>
-						<input class="form-control" type="password" name="psswd" id="psswd">
 					</p>
 					
 				
@@ -237,8 +206,8 @@
 								  </button>
 									<div class="dropdown-menu">
 										<a class="dropdown-item" href="wol.php?mac=<?php echo $a['mac'] ?>">Turn On</a>
-										<a class="dropdown-item" href="" data-toggle="modal" data-toggle="modal" data-target="#shutmodal" onClick="shut('<?php echo $a['ip'] ?>');">Turn Off</a>
-										<!--<a class="dropdown-item" href="#">ETA</a>-->
+										<a class="dropdown-item" href="#">Turn Off</a>
+										<a class="dropdown-item" href="#">ETA</a>
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="removeComputer.php?rm=<?php echo $a['id'] ?>">Remove <?php echo $a['name'] ?></a>
 									</div>
@@ -402,10 +371,6 @@
 				document.getElementById("card2").style.border = "0px solid rgba(0,0,0,.125)";
 			}
 		}
-		function shut(param) {
-			setCookie("shut", param, "1");
-		}
-		
 	</script>
 	
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

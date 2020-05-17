@@ -8,14 +8,16 @@
 	<body onload="init()">
 
 	<!-- DEBUT DU MENU -->
+
+	<?php
+		include('include/menu.php');
+	?>
 	
 	<?php
 		session_start();
 		error_reporting(0);
 		if($_SESSION['username'] != ""){ ?>
 			<!-- CODE ICI -->
-			
-			<?php include('include/tuto.php'); ?>
 			
 			<!-- LOGOUT -->
 			<?php
