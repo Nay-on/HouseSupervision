@@ -1,9 +1,6 @@
-	<div class="tutobox">
-		<h2 style = "margin-top: 4%;">Welcome, here is a tutorial</h2>
-	</div>
 	<div class="accordeon" id="accordion">
 	  <div class="card">
-		<div class="card-header" id="headingSeven">
+		<div class="card-header" id="headingSeven" style="margin-top:65px;">
 		  <h5 class="mb-0">
 			<button class="btn btn-link" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
 				Step 1 - Get the IFTTT Key Part 1

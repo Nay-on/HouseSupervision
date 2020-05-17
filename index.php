@@ -14,9 +14,9 @@
 		error_reporting(0);
 		if($_SESSION['username'] != ""){ ?>
 			<!-- CODE ICI -->
-			
+			<div class="spacetop">
 			<?php include('include/tuto.php'); ?>
-			
+			</div>
 			<!-- LOGOUT -->
 			<?php
 			    if($_SESSION['username'] !== ""){
@@ -41,7 +41,7 @@
 	<?php } ?>
 	
 			<!-- Modal -->
-			<?php include('include/login.php'); ?>
+				<?php include('include/login.php'); ?>
 	
     <!-- Optional JavaScript -->
 	<script>
