@@ -68,7 +68,7 @@
                    if($_GET['deconnexion']==true)
                    {  
                       session_unset();
-                      header("location:index");
+                      header("location:index.php");
                    }
                 }
 			?>
